@@ -1,0 +1,67 @@
+/*-
+ * #%L
+ * FXPlanet
+ * $Id:$
+ * $HeadURL:$
+ * %%
+ * Copyright (C) 2023 Will Hartung
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+/* import fonts */
+@font-face {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/SourceSansPro-Regular.ttf");
+}
+@font-face {
+    font-family: "Source Sans Pro Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("fonts/SourceSansPro-Light.ttf");
+}
+@font-face {
+    font-family: "Source Sans Pro Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/SourceSansPro-Bold.ttf");
+}
+@font-face {
+    font-family: "Source Sans Pro Italic";
+    font-style: italic;
+    font-weight: 400;
+    src: url("fonts/SourceSansPro-Italic.ttf");
+}
+@font-face {
+    font-family: "Source Sans Pro Bold Italic";
+    font-style: italic;
+    font-weight: 700;
+    src: url("fonts/SourceSansPro-BoldItalic.ttf");
+}
+
+.root {
+    -fx-font-family: "Source Sans Pro";    
+}
+
+
+.printLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 10;
+}
+
+.printValue {
+    -fx-font-size: 20;
+}

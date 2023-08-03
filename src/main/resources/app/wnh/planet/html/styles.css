@@ -1,0 +1,112 @@
+/*-
+ * #%L
+ * FXPlanet
+ * $Id:$
+ * $HeadURL:$
+ * %%
+ * Copyright (C) 2023 Will Hartung
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+body {
+    font-family: "Source Sans Pro";
+    color: #333;
+}
+
+
+
+/* Add some padding to the body for better readability */
+body {
+    padding: 20px;
+}
+
+/* Style the headers */
+h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #006633;
+}
+
+h2 {
+    font-size: 20px;
+    color: #006633;
+}
+
+h3 {
+    font-size: 18px;
+    color: #006633;
+}
+
+h4 {
+    font-size: 16px;
+    color: #CD5C5C;
+}
+
+/* Style the table of contents */
+#toc {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toc ul ul {
+    margin-left: 10px;
+}
+
+#toc li {
+    margin-bottom: 5px;
+}
+
+#toc a {
+    text-decoration: none;
+    color: #666;
+}
+
+#toc a:hover {
+    color: #333;
+}
+
+/* Style the content */
+.content {
+    line-height: 1.5;
+}
+
+/* Style the embedded anchors */
+.anchor {
+    display: inline-block;
+    margin-left: -20px;
+    padding-right: 4px;
+    visibility: hidden;
+}
+
+.anchor:before {
+    content: '#';
+    visibility: visible;
+}
+
+/* Add hover effect to the embedded anchors */
+.anchor:hover:before {
+    color: #666;
+}

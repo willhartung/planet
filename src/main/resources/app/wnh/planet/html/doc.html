@@ -1,0 +1,267 @@
+<!--
+  #%L
+  FXPlanet
+  $Id:$
+  $HeadURL:$
+  %%
+  Copyright (C) 2023 Will Hartung
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+-->
+<html>
+    <head>
+        <title>Planet Manual</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div id="toc">
+            <h2>Table of contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#the-10-second-exploration">The 10 second exploration</a></li>
+                <li><a href="#main-window-controls">Main Window Controls</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#planet-generation">Planet Generation</a></li>
+                        <li><a href="#environmental">Environmental</a></li>
+                        <li><a href="#presentation">Presentation</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#command-buttons">Command Buttons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#menus">Menus</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#planet-finder">Planet Finder</a></li>
+                        <li><a href="#print-map">Print Map</a></li>
+                        <li><a href="#show-3d">Show 3D</a></li>
+                        <li><a href="#color-scheme-editor">Color Scheme Editor</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="content">
+            <h1 id="planet">Planet</h1>
+            <h2 id="introduction">Introduction</h2>
+            <p>Planet, a simple planet generation application.</p>
+            <p>Planet is an application that allows the user to create a variety of simple planets with computer generated
+                terrain. It utilizes the work of Torben Mogensen, who's website at <a href="http://hjemmesider.diku.dk/~torbenm/Planet/">http://hjemmesider.diku.dk/~torbenm/Planet/</a>
+                appears to be down at the moment. There is a copy of the website at archive.org, the Internet Wayback Machine,
+                at <a href="https://web.archive.org/web/20230603115922/http://hjemmesider.diku.dk/~torbenm/Planet/">https://web.archive.org/web/20230603115922/http://hjemmesider.diku.dk/~torbenm/Planet/</a></p>
+            <p>The original is a model implemented by a C program and is free to use. For this application, the C program was ported, quite literally,
+                to Java, and then an interface was built around the model to make it easier to use. The website contains a
+                manual for the original application, as well as papers and slides about how the program works. I will not
+                go into detail here about how it works, I can not say I fully understand it anyway.</p>
+            <p>The fundamental premise is that the generator starts with a numeric seed. With this numeric seed, it will always 
+                generate the same planet. It is a fractal generator, which will gain detail as you zoom into the renderings of the planet.
+                The rest of the parameters to the system affect what the generated planet, and the final image, looks like.</p>
+            <h2 id="the-10-second-exploration">The 10 Second Exploration</h2>
+            <p>Simply, run the program and you are presented with a &quot;Planet - Untitled&quot; window. Click the Render button at the bottom
+                of the window, and you will see a small planet image presented.</p>
+            <p>You can play with the Projection selections, and/or the Color Scheme values, and click the Render button again.</p>
+            <p>The Projections are used to change what kind of map is generated from the generated planet. The default Peter 
+                projection is a cylindrical projection, similar to Mercator (which is the projection most people are familiar with),
+                but does not distort the land masses as much.</p>
+            <p>The Color Schemes are different color combinations which can try to make the planet look like a terrestrial planet,
+                or some far off science fiction world.</p>
+            <p>Try the <strong>Print Map</strong> and <strong>Show 3D</strong> options from the <strong>Tools</strong> menu.</p>
+            <h2 id="main-window-controls">Main Window Controls</h2>
+            <p>The main window is divided up into a parameter section on the left, and the image section on the right.</p>
+            <p>The parameter section is broken up into 5 areas.</p>
+            <ul>
+                <li>Planet Generation</li>
+                <li>Positioning</li>
+                <li>Environmental</li>
+                <li>Presentation</li>
+                <li>Properties</li>
+            </ul>
+            <p>There are also four command buttons: Export, Copy, Render, and Defaults.</p>
+            <h3 id="planet-generation">Planet Generation</h3>
+            <p>The parameters in this panel affect the generation and basic rendering of the planet.</p>
+            <p>The Planet Generation Parameters are as follows.</p>
+            <p><strong>Seed</strong> - This is the numeric seed that governs the generation of the planet. It is a floating point number. It's
+                fraction, but it can be any floating point number. Since this is the seed to an effectively random number, there's
+                no rhyme or reason as to what seeds produce what kind of planets.</p>
+            <p><strong>Random Seed</strong> - This button simply populates the Seed with a random number.</p>
+            <p><strong>Lock Seed</strong> - This check box prevents the Seed from being changed. It seemed worthwhile that after finding a planet with characteristics
+                that you like, losing the seed while playing with all of the other parameters would be unfortunate. So, you can lock the
+                seed to prevent unintentional change.</p>
+            <p><strong>Projection</strong> - The projection of the map used to represent the planet. If you imagine the generated planet not so much as a
+                planet at all, but rather and crystalline ball, with rough edges etc., and then put a bright light in the middle, you can
+                better appreciate the mechanics of what are going on here. In truth, there is no &quot;planet&quot; as you would think of one
+                within the system. It's just an abstract fractal blob, and then it's project onto a map, with the results that just so
+                happen look like a planet. </p>
+            <p><strong>Height</strong> - The image height of the generated image.</p>
+            <p><strong>Width</strong> - The image width of the generated image.</p>
+            <p><strong>Color Scheme</strong> - The color scheme used to present the various altitudes of the areas on the planet.</p>
+            <p><strong>Water %</strong> - This is a selector that allows you to generate a planet with a certain amount of water. Perhaps you
+                want a water world, or a desert world. This is one way to affect that. Use this selector with the Search button
+                below it.</p>
+            <p><strong>Search</strong> - This button generates several random planets internally, until it finds one that lies within
+                the selection Water % range. Because of the way it works, it's possible for it to find worlds just
+                outside of the specified range. For example, if you chose 50%-59%, you may get a planet with 49% or 60%.</p>
+            <p><strong>Actual %</strong> - This is the percentage of water that's closer to the actual coverage of the generated world. 
+                Because it uses small renderings to search for the planets, the actual percentage isn't isn't known until the
+                large image is generated. This will only show for the PETERS projection.</p>
+            <h3 id="positioning">Positioning</h3>
+            <p>The parameters in the Positioning pane affect the position of the planet compared to the camera used
+                for the map projection.</p>
+            <p>The <strong>Latitude</strong> and <strong>Longitude</strong> represent at what latitude and longitude of the planet is at the center
+                of the rendered map. </p>
+            <p>The sliders mate to the nearby Lat and Long fields.</p>
+            <p>The Sun Lat and Long parameters represent where on the world the sun happens to be
+                shining. This is used later, with the Daylight shading option.</p>
+            <p><strong>Scale</strong> - Scale represents the magnification of the projection. Using a combination of the Latitude 
+                and Longitude values and the Scale field, you can zoom in on to specific areas of the map.</p>
+            <h3 id="environmental">Environmental</h3>
+            <p>The Environmental section has parameters to change features on the planet based on the 
+                temperature of the zone (poles being cooler).</p>
+            <p><strong>Latitude</strong> - With this option greater than zero, the colors are changed based on the latitude 
+                of the terrain, instead of just the altitude. Simply put, the higher this number,
+                the colder and frostier the poles will become.</p>
+            <p><strong>Temperature</strong> - When checked, instead of seeing colors based on altitude, you will see
+                colors based on the temperature of the land, based on latitude and altitude.</p>
+            <p><strong>Biomes</strong> - The model has a series of colors representing different biomes. Biomes
+                (e.g. Tundra, Grassland, Desert) are determined by a combination of rainfall and
+                temperature. The colors below sea level for the color scheme are unchanged, but 
+                above sea level the colors are replaced with colors to represent each biome.</p>
+            <p><strong>Base</strong> - Base is the initial altitude of the model. -0.02 is just below sea level.
+                The most notable impact of changing this value is raising and lowering the sea level
+                of the planet. This is another way to tune how much water is available on the planet.</p>
+            <h3 id="presentation">Presentation</h3>
+            <p><strong>Outline</strong> - this checkbox determines whether an outline of the continents is added.</p>
+            <p><strong>Black and White</strong> - this checkbox, combined with the Outline option, simply outlines
+                all of the continents. Both must be checked to produce the outline.</p>
+            <p><strong>Contours</strong> - this value determines if contour lines are shown at different altitudes.
+                The higher the number, the more contours are added to the map.</p>
+            <p><strong>Coastal Contours</strong> - this value determines if contours are drawn in coastal waters.
+                The higher the number, the more contour lines that are drawn.</p>
+            <p><strong>Latitude Lines</strong> - this value is the number of degrees between latitude lines.
+                If the value is 0, no latitude lines are drawn.</p>
+            <p><strong>Longitude Lines</strong> - this value is the number of degrees between longitude lines.
+                If the value is 0, no longitude lines are drawn.</p>
+            <p><strong>Shading</strong> - this option determines what, if any, shading is done to the map.
+                It has 3 options: <strong>Land and Sea</strong>, <strong>Land Only</strong>, and <strong>Daylight</strong>.</p>
+            <p>When Land and Sea is selected, the contours of the map, both above and below sea level
+                are shaded to provide a sense of the relief of the terrain. With Land Only, only
+                the land part of the map is shaded. When Daylight is selected, the suns position 
+                (as specified in the Positioning section), is used to provide a night and day affect
+                on the map. In this mode, the Land is also shaded just like the Land Only option.</p>
+            <h3 id="properties">Properties</h3>
+            <p>The properties section is used to fill in any high level properties for the planet.
+                These are only show when the Print Map option is used.</p>
+            <p><strong>Name</strong> - the planet name.</p>
+            <p><strong>Diameter</strong> - the planet diameter, in kilometers.</p>
+            <p><strong>Location</strong> - a free form field for the location of the planet.</p>
+            <p><strong>Profile</strong> - a characteristic summary of the planet, as used in some role playing games.</p>
+            <h3 id="command-buttons">Command Buttons</h3>
+            <p>There are four command buttons.</p>
+            <p><strong>Export</strong> - the system prompts for a file name to save a PNG format copy of the planet image.</p>
+            <p><strong>Copy</strong> - puts a copy of the image onto the system clipboard for pasting into other 
+                programs.</p>
+            <p><strong>Render</strong> - renders the current image of the planet.</p>
+            <p><strong>Defaults</strong> - resets all of the values to their defaults, including the Seed. If the Seed is Locked, it
+                will prompt before resetting the values. </p>
+            <h3 id="menus">Menus</h3>
+            <p>The system has three menus on the main pane. The File, Tools and Help menu.</p>
+            <h4 id="file-menu">File Menu</h4>
+            <p>The file menu has options for the typical file operations, including New, Open, 
+                Save, and Save As.</p>
+            <p>The file is in an unspecified JSON format. The file is simple, but tampering with the
+                file can lead to undefined behavior.</p>
+            <h4 id="tools-menu">Tools Menu</h4>
+            <p>The tools menu give access to assorted utilities for the Planet generator, including
+                Planet Finder, Print Map, 3D View, and Color Scheme Editor.</p>
+            <h4 id="help-menu">Help Menu</h4>
+            <p>The help menu gives access to a simple About dialog, and this help page.</p>
+            <h3 id="tools">Tools</h3>
+            <p>The system has four tools accessible by the Tools menu.</p>
+            <ul>
+                <li>Planet Finder</li>
+                <li>Print Map</li>
+                <li>Show 3D</li>
+                <li>Color Scheme Editor</li>
+            </ul>
+            <h3 id="planet-finder">Planet Finder</h3>
+            <p>The Planet Finder tools makes it easier generate several planets at once in order help
+                find the perfect planet. It has four parameters, three taken from the main window.
+                Click the <strong>Generate</strong> button to create all of the planets. If you 
+                double-click on any of the planets in the browser, it will create a new main
+                planet window for that planet.
+            </p>
+            <p><strong>Projection</strong> - This is the projection you wish to view for each planet.</p>
+            <p> <strong>Color Scheme</strong>  - This is the Color Scheme desired for each planet.</p>            
+            <p><strong>Water %</strong>  - This is the water range for each planet.</p>
+            <p><strong>No. to Generate</strong> - The number of planets to generate.</p>
+            <h3 id="print-map">Print Map</h3>
+            <p>The Print Map tool takes the current planet parameters and renders it using
+                the Icosohedral projection. On top of that, it overlays borders, a hex diagram,
+                and then wraps it all in a frame that display the values from the Properties section
+                of the Main Window Controls. The hex size is simply the diameter of the planet
+                (as set in the Properties section) divided by 35, as there are 35 hexes on the 
+                equator of the map.</p>
+            <p>There is a <strong>Print</strong> button which will bring up the respective
+                system printer dialog box. The important aspect here is that most systems
+                allow you to print to PDF from the dialog, so its easy to generate PDF
+                versions of your maps.</p>
+            <p>The <strong>Export</strong> button will take the map and save it to a PNG file
+                for use in other programs.</p>
+            <p>You may also use Drag and Drop to drag the map image into another application.</p>
+            <h3 id="show-3d">Show 3D</h3>
+            <p>This tool simply renders your current planet using the <strong>Peters</strong> projection, maps it
+                onto the surface of a sphere in 3D, and starts it spinning. It's a great way to get an
+                overall view of your planet.</p>
+            <h3 id="color-scheme-editor">Color Scheme Editor</h3>
+            <p>This tool is used to create and change the Color Schemes. The program bundles several
+            Color Schemes that were provided along with the original planet.c source code. But also 
+            allows you to change those or create new ones.</p>
+            <p>A Color Scheme consists of four functional colors, and a list of other colors that 
+                are used to color the altitudes of the generated planet. The four functional colors have
+            pre-defined uses.</p>
+            <p><strong>Background</strong> - This is the background color for the generated image.</p>
+            <p><strong>Lat/Long Lines</strong> - This is the color for the Longitude and Latitude lines.</p>
+            <p><strong>Outline 1</strong> - When using the outline options, this is the color of the primary outline.</p>
+            <p><strong>Outline 2</strong> - When using the outline options, this is the color of the secondary outline.
+            These appear when several outlines are selected, and show only on Land.</p>
+            <p>The Altitude Colors are essentially used to define gradients of color when painting the terrain. A list of values and colors
+            are used, defining steps in the color scheme. The system will generate altitudes along the entire spectrum of the color scheme,
+            with low values representing the various water levels (deep, shallow, etc.) and higher value representing land and mountain levels.</p>
+            <p>Sea Level is automatically assigned based on the mid point between the highest and lowest values.</p>
+            <p>Colors are interpolated between each entry. The simplest example is the Grayscale which only has two 
+                values, 5 and 255. All other colors are simply filled in between the two values. The Color Scheme can
+                be considered a list of color gradients.</p>
+            <p>The actual values used are mostly arbitrary, altitudes will be mapped linearly among the extremes.
+                While most of the scheme run from 0 to 255, that's not a hard limit. The system accommodates over 65000
+                different colors should you so choose.</p>
+            <p>Usage should be straightforward.</p>
+            <p>A Color Scheme is selected from the alphabetical list on the left, and displayed within the control grid
+            to the right. To change an individual value, you can double-click on a cell and either update the Value directly,
+            or, for the actual Color, you will be presented with a a Color Picker to select your color. Individual elements
+            can be added or deleted using the <strong>+</strong> and <strong>-</strong> buttons. The elements will automatically
+            sort based on the Value field.</p>
+            <p>To create a new Color Scheme, select the appropriate <strong>+</strong> button beneath the Color Scheme list,
+                and enter a new name. Names can not be reused. Similarly, use the <strong>-</strong> button to delete
+                a Color Scheme.</p>
+            <p>Color Schemes can be duplicated with the <strong>Duplicate</strong> button, and renamed with
+            the <strong>Rename</strong> button.</p>
+            <p>The Color Schemes are automatically persisted to disk in a file located in the OS specific location
+                for user data. If that file is removed, it will be recreated when the application restarts.</p>
+        </div>
+    </body>
+</html>
