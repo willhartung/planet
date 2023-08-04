@@ -42,6 +42,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javax.imageio.ImageIO;
+import org.junit.jupiter.api.Test;
 
 /*
 As a general rule, I'm not big on tests. Instead, I use tests to write quick
@@ -82,8 +83,8 @@ public class ColorSchemeManagerTest {
         model.setLongitude(75.);
         model.setProjection(Projection.ORTHOGRAPHIC);
         model.setTransparent(true);
-        int res = 32;
-        for (int i = 0; i < 6; i++) {
+        int res = 16;
+        for (int i = 0; i < 7; i++) {
             model.setHeight(res);
             model.setWidth(res);
 
