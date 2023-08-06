@@ -113,7 +113,6 @@ public class ThreeDMapController implements Initializable {
     }
 
     public void stopAnimation() {
-        System.out.println("stopping animation");
         if (animation != null) {
             animation.stop();
             animation = null;

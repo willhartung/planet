@@ -42,9 +42,6 @@ public class PlanetApp extends Application {
     public void start(Stage stage) throws Exception {
         PlanetFormController controller = PlanetFormController.getControllerWithStageModel(stage, PlanetModel.getDefaultModel());
         stage.show();
-//        Stage newStage = new Stage();
-//        PrintMapController c = PrintMapController.getControllerWithStageModel(newStage, PlanetModel.getDefaultModel());
-//        newStage.show();
     }
 
     @Override
