@@ -12,7 +12,7 @@ of the model. It also provides a printable icosahedral version.
 There is a more detail manual bundled with the application.
 
 
-#Build Instructions
+# Build Instructions
 
 Planet is a JavaFX Maven project, and requires JDK 17 or above. It uses JavaFX
 from the Maven repositories, so there is no need to bundle FX with the JDK. I 
